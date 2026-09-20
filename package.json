@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-comps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "CompFlow groups DSH Desktop sessions into named, collapsible compositions.",
   "author": "SoyBeanMilkx",

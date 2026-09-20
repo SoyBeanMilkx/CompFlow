@@ -5,6 +5,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
+const clientCss = readFileSync(join(root, 'src', 'client', 'styles.css'), 'utf8').trimEnd()
 const appModules = '/Applications/DSH Desktop.app/Contents/Resources/app/node_modules'
 const appRequire = createRequire(join(appModules, 'noop.js'))
 
@@ -285,6 +286,8 @@ const at = (needle) => html.indexOf(needle)
 const count = (needle) => html.split(`>${needle}<`).length - 1
 
 check('mounts and reads the composition document from the host', stateFetches === 1)
+check('injects the standalone stylesheet unchanged',
+  document.querySelector('style[data-plugin-css="dsh-session-comps/native-sidebar"]')?.textContent === clientCss)
 check('renders the workspace group', at('dsh_plugin') >= 0)
 check('renders a composition inside that workspace', at('登录重构') > at('dsh_plugin'))
 check('renders a nested composition inside its parent', at('接口层') > at('登录重构'))

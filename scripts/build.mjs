@@ -15,8 +15,10 @@ const clientParts = [
   'bootstrap.js', 'styles.js', 'locales.js', 'data.js',
   'components.js', 'browser.js', 'entry.js',
 ]
-const body = clientParts
-  .map(file => readFileSync(join(root, 'src', 'client', file), 'utf8').trimEnd())
+const clientCss = readFileSync(join(root, 'src', 'client', 'styles.css'), 'utf8').trimEnd()
+const body = [`const CLIENT_CSS = ${JSON.stringify(clientCss)}`]
+  .concat(clientParts.map(file =>
+    readFileSync(join(root, 'src', 'client', file), 'utf8').trimEnd()))
   .join('\n\n')
 const indented = body.replace(/^(?=.)/gm, '\t\t')
 const bundle = `window.__ModuleLoader__.load({
