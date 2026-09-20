@@ -1,0 +1,4 @@
+# The browser half is declared separately in package.json.
+- insert:
+    - id: session-comps
+      name: 'dsh-session-comps'
