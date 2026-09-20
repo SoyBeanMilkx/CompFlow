@@ -1,6 +1,6 @@
 # CompFlow
 
-CompFlow 是一个 DSH Desktop 会话管理插件。它把同一工作区里的多个会话收进可折叠的“合成”，让频繁分叉后的会话列表保持清爽。
+CompFlow 是一个 Deepseek Harness 的会话管理插件。它把同一工作区里的多个会话收进可折叠的“合成”，让频繁分叉后的会话列表保持清爽
 
 ![CompFlow 合成视图](docs/images/compflow-overview.png)
 
@@ -27,7 +27,7 @@ CompFlow 是一个 DSH Desktop 会话管理插件。它把同一工作区里的�
 dsh plugin --profile web add github:SoyBeanMilkx/CompFlow
 ```
 
-安装完成后重启 DSH Desktop。
+安装完成后重启 DSH
 
 ## 开发
 
@@ -36,10 +36,10 @@ npm run build
 npm test
 ```
 
-开发时也可以从本地目录安装到 DSH Desktop 的 `web` profile：
+开发时也可以从本地目录安装到 DSH 的 `web` profile：
 
 ```sh
 dsh plugin --profile web add /path/to/CompFlow
 ```
 
-首次安装或 Host 端代码更新后，可能需要完全重启 DSH Desktop。
+首次安装或 Host 端代码更新后，可能需要完全重启 DSH
